@@ -17,6 +17,7 @@
 		DD6FF3032B48654C001AE994 /* tokenizerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6FF3022B48654C001AE994 /* tokenizerUITestsLaunchTests.swift */; };
 		DD6FF3122B486A50001AE994 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6FF3112B486A50001AE994 /* MainPageViewController.swift */; };
 		DD6FF3152B4893C5001AE994 /* TokenizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6FF3142B4893C5001AE994 /* TokenizerService.swift */; };
+		DD6FF31B2B4898C4001AE994 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6FF31A2B4898C4001AE994 /* ResultPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		DD6FF3022B48654C001AE994 /* tokenizerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tokenizerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DD6FF3112B486A50001AE994 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		DD6FF3142B4893C5001AE994 /* TokenizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerService.swift; sourceTree = "<group>"; };
+		DD6FF31A2B4898C4001AE994 /* ResultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,8 @@
 				DD6FF30F2B4869C0001AE994 /* Module */,
 				DD6FF2DF2B48654B001AE994 /* AppDelegate.swift */,
 				DD6FF2E12B48654B001AE994 /* SceneDelegate.swift */,
-				DD6FF2E52B48654B001AE994 /* Main.storyboard */,
 				DD6FF2E82B48654C001AE994 /* Assets.xcassets */,
+				DD6FF2E52B48654B001AE994 /* Main.storyboard */,
 				DD6FF2EA2B48654C001AE994 /* LaunchScreen.storyboard */,
 				DD6FF2ED2B48654C001AE994 /* Info.plist */,
 			);
@@ -133,6 +135,7 @@
 		DD6FF30F2B4869C0001AE994 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DD6FF3162B489819001AE994 /* Result */,
 				DD6FF3102B4869E6001AE994 /* Main */,
 			);
 			path = Module;
@@ -152,6 +155,14 @@
 				DD6FF3142B4893C5001AE994 /* TokenizerService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		DD6FF3162B489819001AE994 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				DD6FF31A2B4898C4001AE994 /* ResultPageViewController.swift */,
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD6FF2E02B48654B001AE994 /* AppDelegate.swift in Sources */,
+				DD6FF31B2B4898C4001AE994 /* ResultPageViewController.swift in Sources */,
 				DD6FF3152B4893C5001AE994 /* TokenizerService.swift in Sources */,
 				DD6FF3122B486A50001AE994 /* MainPageViewController.swift in Sources */,
 				DD6FF2E22B48654B001AE994 /* SceneDelegate.swift in Sources */,

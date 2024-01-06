@@ -8,5 +8,7 @@
 import Foundation
 
 final class TokenizerService {
-    
+    static func getTokenizedSentences(fromText text: String) -> [[String]] {
+        return [["Moscow", "Saratov"], ["Europe", "Kosmos", "Agutin"]]
+    }
 }
