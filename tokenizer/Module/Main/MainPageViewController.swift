@@ -23,10 +23,9 @@ final class MainPageViewController: UIViewController, UITextViewDelegate {
                textView.resignFirstResponder()
                goToResultPage()
                return false
-           } else {
-               fatalError("Unhandled keyboard button pressed")
            }
-           //return true
+           
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,8 +33,7 @@ final class MainPageViewController: UIViewController, UITextViewDelegate {
         if segue.identifier == "resultSegue" {
             guard let vc = segue.destination as? ResultPageViewController else { return }
             // pass data later here to vc
-            vc.inputText = textView.text
-            print(vc.inputText)
+            vc.tokenizedSentences =  TokenizerService.getTokenizedSentences(fromText: textView.text, languageUsed: .english)
         } else {
             fatalError("unknown segue was called for prepare")
         }

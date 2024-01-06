@@ -8,12 +8,10 @@
 import UIKit
 
 final class ResultPageViewController: UITableViewController {
-    var inputText = ""
-    private var tokenizedSentences: [[String]] = []
+    var tokenizedSentences: [[String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tokenizedSentences = TokenizerService.getTokenizedSentences(fromText: inputText)
         print("ResultPageViewController:viewDidLoad")
     }
     
@@ -23,5 +21,19 @@ final class ResultPageViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tokenizedSentences[section].count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TokenCell", for: indexPath)
+        
+        let token = tokenizedSentences[indexPath.section][indexPath.row]
+        cell.textLabel?.text = token
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionName = "Sentence \(section+1)"
+        return sectionName
     }
 }
