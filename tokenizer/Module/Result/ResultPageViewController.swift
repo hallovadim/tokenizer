@@ -23,6 +23,11 @@ final class ResultPageViewController: UITableViewController {
         return tokenizedSentences[section].count
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        // to avoid the section #0 header cutoff by topbar.
+        return section == 0 ? 30 : 18
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TokenCell", for: indexPath)
         

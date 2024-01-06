@@ -9,12 +9,15 @@ import UIKit
 
 final class MainPageViewController: UIViewController, UITextViewDelegate {
     
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MainPageViewController:viewDidLoad")
         textView.delegate = self
+        //pickerView.dataSource = self
+        //pickerView.delegate = self
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

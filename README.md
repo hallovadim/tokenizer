@@ -10,4 +10,3 @@ The app tokenizes a sentence.
 - implement screenshots and good examples.
 - implement spanish language feature, remember selected language via user defaults
 - extent launch screen time to 2 seconds
-- result view: add top padding or fix issue with top overlay
