@@ -7,6 +7,5 @@ The app tokenizes a sentence.
 - write tests
 - check for memory leaks
 - return default input to "", and add the placeholder
-- implement screenshots and good examples.
-- implement spanish language feature, remember selected language via user defaults
+- implement screenshots and good examples
 - extent launch screen time to 2 seconds

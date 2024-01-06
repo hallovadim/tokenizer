@@ -14,7 +14,7 @@ final class TokenizerService {
         
         var sentences: [[String]] = []
         var sentence: [String] = []
-        for (index, rawToken) in tokens.enumerated() {
+        tokens.forEach { rawToken in
             let token = String(rawToken)
             if stopWords.contains(token) {
                 if sentence.count > 0 {

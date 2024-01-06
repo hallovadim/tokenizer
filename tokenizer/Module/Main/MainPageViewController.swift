@@ -16,8 +16,9 @@ final class MainPageViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         print("MainPageViewController:viewDidLoad")
         textView.delegate = self
-        //pickerView.dataSource = self
-        //pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.selectRow(Language.getSelectedLanguageIndex(), inComponent: 0, animated: false)
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -36,7 +37,7 @@ final class MainPageViewController: UIViewController, UITextViewDelegate {
         if segue.identifier == "resultSegue" {
             guard let vc = segue.destination as? ResultPageViewController else { return }
             // pass data later here to vc
-            vc.tokenizedSentences =  TokenizerService.getTokenizedSentences(fromText: textView.text, languageUsed: .english)
+            vc.tokenizedSentences =  TokenizerService.getTokenizedSentences(fromText: textView.text, languageUsed: Language.getSelectedLanguage())
         } else {
             fatalError("unknown segue was called for prepare")
         }
@@ -44,5 +45,25 @@ final class MainPageViewController: UIViewController, UITextViewDelegate {
     
     func goToResultPage() {
         performSegue(withIdentifier: "resultSegue", sender: self)
+    }
+}
+
+extension MainPageViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Language.allCasesArray.count
+    }
+}
+
+extension MainPageViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Language.allCasesArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        Language.setSelectedLanguageIndex(index: row)
     }
 }
